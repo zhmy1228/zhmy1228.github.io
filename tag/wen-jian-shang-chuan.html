@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="nnnnn" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="mmmm"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="mmmm"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+  <title>mmmm &ndash;     Tag 文件上传
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About Me</a></li>
+
+          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/wen-jian-shang-chuan.html#wen-jian-shang-chuan">文件上传</a></h2>
+    <p>
+          Posted on 周五 27 二月 2015 in <a href="/category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/wen-jian-shang-chuan.html">文件上传</a>
+    </p>
+  </header>
+  <div>
+      <hr>
+<h2>文件上传漏洞的危害</h2>
+<ul>
+<li>上传文件是Web脚本语言，服务器的Web容器解释并执行了用户上传的脚本，导致代码执行。</li>
+<li>上传文件是Flash的策略文件crossdomain.xml，黑客用以控制Flash在该域下的行为（其他通过类似方式控制策略文件的情况类似);</li>
+<li>上传文件是病毒、木马文件，黑客用以诱骗用户或者管理员下载执行。</li>
+<li>上传文件是钓鱼图片或为包含了脚本的图片，在某些版本的浏览器中会被作为脚本执行，被用于钓鱼和欺诈。</li>
+</ul>
+<h2>文件上传检测绕过</h2>
+<ul>
+<li>客户端检测绕过<ul>
+<li>如先将文件改名为1.jpg，抓包改文件名为1.php</li>
+</ul>
+</li>
+<li>MIME 类型检测绕过<ul>
+<li>抓包修改Content-Type为服务器允许的类型</li>
+</ul>
+</li>
+<li>目录路径检测绕过<ul>
+<li>如：FilePath = C:/wamp/www/userfiles/image/fuck.php .gif/fvck.gif (.php 后面是 0x00)<ol>
+<li>先将 sFilePath 写入到指定位置，但是底层操作应该是调用的类似于 c 语言，遇到 0x00 会
+自动截断，所以真正写入的实际地址是 …</li></ol></li></ul></li></ul>
+      <br>
+      <a class="btn" href="/wen-jian-shang-chuan.html#wen-jian-shang-chuan">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; nnnnn </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " mmmm ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

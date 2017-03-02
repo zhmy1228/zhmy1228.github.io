@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="nnnnn" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="mmmm"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="mmmm"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+  <title>mmmm &ndash;     Tag ssrf
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About Me</a></li>
+
+          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/ssrf.html#ssrf">ssrf</a></h2>
+    <p>
+          Posted on 周五 27 二月 2015 in <a href="/category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/ssrf.html">ssrf</a>
+    </p>
+  </header>
+  <div>
+      <hr>
+<h2>什么是ssrf</h2>
+<div class="highlight"><pre><span></span>利用存在缺陷的web应用作为代理攻击远程和本地的服务器。这种形式的攻击称为服务端请求伪造攻击（Server-side Request Forgery）
+</pre></div>
+
+
+<h2>ssrf可以做什么</h2>
+<ul>
+<li>可以对外网、服务器所在内网、本地进行端口扫描，获取一些服务的banner信息;</li>
+<li>攻击运行在内网或本地的应用程序（比如溢出）;</li>
+<li>对内网web应用进行指纹识别，通过访问默认文件实现;</li>
+<li>攻击内外网的web应用，主要是使用get参数就可以实现的攻击（比如struts2，sqli等）;</li>
+<li>利用file协议读取本地文件等。</li>
+</ul>
+<h2>ssrf是怎样产生的</h2>
+<div class="highlight"><pre><span></span>web应用提供了从其他的服务器上获取数据的功能且没有对目标URL做过滤和限制。如：获取图片，下载文件，读取文件内容等
+</pre></div>
+
+
+<h2>绕过过滤</h2>
+<ul>
+<li>使用@ 如：http://a.com@10.10.10.10.10</li>
+<li>IP地址转化为进制 如：127.0.0.1 = 2130706433</li>
+<li>内网地址转化为短地址 如： http://t.cn/RwbLKDx …</li></ul>
+      <br>
+      <a class="btn" href="/ssrf.html#ssrf">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; nnnnn </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " mmmm ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

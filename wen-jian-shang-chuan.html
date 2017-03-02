@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="nnnnn" />
+<meta name="description" content="文件上传漏洞的危害 上传文件是Web脚本语言，服务器的Web容器解释并执行了用户上传的脚本，导致代码执行。 上传文件是Flash的策略文件crossdomain.xml，黑客用以控制Flash在该域下的行为（其他通过类似方式控制策略文件的情况类似); 上传文件是病毒、木马文件，黑客用以诱骗用户或者管理员下载执行。 上传文件是钓鱼图片或为包含了脚本的图片，在某些版本的浏览器中会被作为脚本执行，被用于钓鱼和欺诈。 文件上传检测绕过 客户端检测绕过 如先将文件改名为1.jpg，抓包改文件名为1.php MIME 类型检测绕过 抓包修改Content-Type为服务器允许的类型 目录路径检测绕过 如：FilePath = C:/wamp/www/userfiles/image/fuck.php .gif/fvck.gif (.php 后面是 0x00) 先将 sFilePath 写入到指定位置，但是底层操作应该是调用的类似于 c 语言，遇到 0x00 会 自动截断，所以真正写入的实际地址是 …" />
+<meta name="keywords" content="文件上传">
+<meta property="og:site_name" content="mmmm"/>
+<meta property="og:title" content="文件上传"/>
+<meta property="og:description" content="文件上传漏洞的危害 上传文件是Web脚本语言，服务器的Web容器解释并执行了用户上传的脚本，导致代码执行。 上传文件是Flash的策略文件crossdomain.xml，黑客用以控制Flash在该域下的行为（其他通过类似方式控制策略文件的情况类似); 上传文件是病毒、木马文件，黑客用以诱骗用户或者管理员下载执行。 上传文件是钓鱼图片或为包含了脚本的图片，在某些版本的浏览器中会被作为脚本执行，被用于钓鱼和欺诈。 文件上传检测绕过 客户端检测绕过 如先将文件改名为1.jpg，抓包改文件名为1.php MIME 类型检测绕过 抓包修改Content-Type为服务器允许的类型 目录路径检测绕过 如：FilePath = C:/wamp/www/userfiles/image/fuck.php .gif/fvck.gif (.php 后面是 0x00) 先将 sFilePath 写入到指定位置，但是底层操作应该是调用的类似于 c 语言，遇到 0x00 会 自动截断，所以真正写入的实际地址是 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/wen-jian-shang-chuan.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-02-27 10:20:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/nnnnn.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="文件上传"/>
+<meta property="og:image" content="">
+
+  <title>mmmm &ndash; 文件上传</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About Me</a></li>
+
+          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="wen-jian-shang-chuan">文件上传</h1>
+    <p>
+          Posted on 周五 27 二月 2015 in <a href="/category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <hr>
+<h2>文件上传漏洞的危害</h2>
+<ul>
+<li>上传文件是Web脚本语言，服务器的Web容器解释并执行了用户上传的脚本，导致代码执行。</li>
+<li>上传文件是Flash的策略文件crossdomain.xml，黑客用以控制Flash在该域下的行为（其他通过类似方式控制策略文件的情况类似);</li>
+<li>上传文件是病毒、木马文件，黑客用以诱骗用户或者管理员下载执行。</li>
+<li>上传文件是钓鱼图片或为包含了脚本的图片，在某些版本的浏览器中会被作为脚本执行，被用于钓鱼和欺诈。</li>
+</ul>
+<h2>文件上传检测绕过</h2>
+<ul>
+<li>客户端检测绕过<ul>
+<li>如先将文件改名为1.jpg，抓包改文件名为1.php</li>
+</ul>
+</li>
+<li>MIME 类型检测绕过<ul>
+<li>抓包修改Content-Type为服务器允许的类型</li>
+</ul>
+</li>
+<li>目录路径检测绕过<ul>
+<li>如：FilePath = C:/wamp/www/userfiles/image/fuck.php .gif/fvck.gif (.php 后面是 0x00)<ol>
+<li>先将 sFilePath 写入到指定位置，但是底层操作应该是调用的类似于 c 语言，遇到 0x00 会
+自动截断，所以真正写入的实际地址是 C:/wamp/www/userfiles/image/fuck.php</li>
+<li>把原本 fvck.gif 里的内容(目前应该存在临时文件，类似于 C:/Temp/phpf3at7b 这样的文件)
+然后把 C:/Temp/phpf3at7b 的内容写入到 C:/wamp/www/userfiles/image/fuck.php 里
+这样便获得了我们所想要的 webshell</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>文件扩展名检测绕过<ul>
+<li>如 filename="1.asp/1.jpg"</li>
+<li>如 filename="1.asp .jpg"(asp 后面为 0x00)</li>
+</ul>
+</li>
+<li>文件内容检测绕过<ul>
+<li>在文件开头加入服务器允许上传文件的文件头</li>
+</ul>
+</li>
+<li>利用解析漏洞绕过<ul>
+<li>.htaccess 解析</li>
+<li>Apache 解析漏洞<ul>
+<li>1.php.aaa.bbb.ccc 会从后往前解析知道能解析为止</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/wen-jian-shang-chuan.html">文件上传</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; nnnnn </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " mmmm ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>
